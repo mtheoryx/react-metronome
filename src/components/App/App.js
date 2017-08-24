@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 
+import Metronome from '../Metronome/Metronome'
+
 const Wrapper = styled.div`
   margin: 0;
   padding: 0;
@@ -12,7 +14,7 @@ class App extends Component {
   render() {
     return (
       <Wrapper>
-        <span>Hello from React!</span>
+        <Metronome />
       </Wrapper>
     );
   }
