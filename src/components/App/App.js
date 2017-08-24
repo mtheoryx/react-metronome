@@ -1,12 +1,19 @@
 import React, { Component } from 'react';
-import './App.css';
+import styled from 'styled-components';
+
+const Wrapper = styled.div`
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  text-align: center;
+`;
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-
-      </div>
+      <Wrapper>
+        <span>Hello from React!</span>
+      </Wrapper>
     );
   }
 }
