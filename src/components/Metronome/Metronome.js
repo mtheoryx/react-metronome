@@ -4,6 +4,7 @@ import click2 from '../../audio/click2.wav';
 import './Metronome.css';
 
 import ActionButton from '../ActionButton/ActionButton';
+import Heading from '../Heading/Heading';
 
 class Metronome extends Component {
   constructor(props) {
@@ -74,7 +75,8 @@ class Metronome extends Component {
     return (
       <div className="metronome">
         <div className="bpm-slider">
-          <div>{playing ? 'Now Playing at: ' : ''} {bpm} BPM</div>
+          <Heading isPlaying={playing} currentBpm={bpm}/>
+          
           <input
             type="range"
             min="60"
