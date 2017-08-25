@@ -1,11 +1,18 @@
 import React, { Component } from 'react';
+import styled from 'styled-components';
+
 import click1 from '../../audio/click1.wav';
 import click2 from '../../audio/click2.wav';
-import './Metronome.css';
 
 import ActionButton from '../ActionButton/ActionButton';
 import Heading from '../Heading/Heading';
 import Slider from '../Slider/Slider';
+
+const MetronomeWrapper = styled.div`
+  max-width: 375px;
+  margin: 0 auto;
+  padding: 30px;
+`;
 
 class Metronome extends Component {
   constructor(props) {
@@ -76,8 +83,7 @@ class Metronome extends Component {
     const { playing, bpm } = this.state;
 
     return (
-      <div className="metronome">
-
+      <MetronomeWrapper>
         <Heading
           isPlaying={playing}
           currentBpm={bpm} />
@@ -89,7 +95,7 @@ class Metronome extends Component {
         <ActionButton
           isPlaying={playing}
           handleOnClick={this.startStop} />
-      </div>
+      </MetronomeWrapper>
     );
   }
 }
