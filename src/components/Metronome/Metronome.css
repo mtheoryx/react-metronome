@@ -8,16 +8,3 @@
   width: 100%;
   margin: 10px;
 }
-
-.metronome button {
-  background: #C94D46;
-  padding: 10px;
-  border: 1px solid #832420;
-  border-radius: 2px;
-  width: 100px;
-  color: #fff;
-  font-size: 18px;
-}
-.metronome button:focus {
-  outline: 0;
-}
