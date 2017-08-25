@@ -5,6 +5,7 @@ import './Metronome.css';
 
 import ActionButton from '../ActionButton/ActionButton';
 import Heading from '../Heading/Heading';
+import Slider from '../Slider/Slider';
 
 class Metronome extends Component {
   constructor(props) {
@@ -26,7 +27,8 @@ class Metronome extends Component {
 
     if (this.state.playing) {
       clearInterval(this.timer);
-      this.timer = setInterval(this.playClick, (60 / bpm) * 100);
+
+      this.timer = setInterval(this.playClick, (60 / bpm) * 1000);
 
       this.setState({
         count: 0,
@@ -42,7 +44,8 @@ class Metronome extends Component {
       // Stop the timer
       clearInterval(this.timer);
       this.setState({
-        playing: false
+        playing: false,
+        count: 0
       });
     } else {
       // Start a timer with the current BPM
@@ -74,16 +77,14 @@ class Metronome extends Component {
 
     return (
       <div className="metronome">
-        <div className="bpm-slider">
-          <Heading isPlaying={playing} currentBpm={bpm}/>
-          
-          <input
-            type="range"
-            min="60"
-            max="240"
-            value={bpm}
-            onChange={this.handleBpmChange} />
-        </div>
+
+        <Heading
+          isPlaying={playing}
+          currentBpm={bpm} />
+
+        <Slider
+          currentBpm={bpm}
+          handleChange={this.handleBpmChange} />
 
         <ActionButton
           isPlaying={playing}
