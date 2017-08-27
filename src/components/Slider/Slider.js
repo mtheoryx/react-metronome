@@ -6,7 +6,7 @@ const Input = styled.input`
   margin: 10px;
 `;
 
-const Slider = ({ currentBpm, handleChange }) => {
+const Slider = ({ currentBpm = 100, handleChange }) => {
   return (
     <Input
       type="range"
