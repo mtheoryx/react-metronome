@@ -1,15 +1,22 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { storiesOf } from '@storybook/react';
 
 import Slider from './Slider';
 
+class SliderBox extends Component {
+  state = {
+    bpm: 120
+  };
+  handleChange = e => this.setState({bpm: parseInt(e.target.value)});
+  render() {
+    return <Slider
+      currentBpm={this.state.bpm}
+      handleChange={this.handleChange}/>
+  }
+};
+
 storiesOf('Slider', module)
   .add('Default', () => (
-    <Slider />
-  ))
-  .add('Starts with lowest bpm', () => (
-    <Slider currentBpm={60} />
-  ))
-  .add('Starts with highest bpm', () => (
-    <Slider currentBpm={240} />
-  ));
+      <SliderBox />
+    )
+  );

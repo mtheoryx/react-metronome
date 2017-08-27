@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 const Input = styled.input`
@@ -17,5 +18,10 @@ const Slider = ({ currentBpm = 100, handleChange }) => {
     />
   )
 };
+
+Slider.propTypes = {
+  currentBpm: PropTypes.number,
+  handleChange: PropTypes.func.isRequired
+}
 
 export default Slider;
